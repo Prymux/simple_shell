@@ -1,11 +1,6 @@
 #!/bin/bash
-nun=1
-while [ $nun ]; do
-read -p "Command: " num
-until [ -e /bin/$num ]; do
-	echo "Please insert correct command"
-	read -p "Command: " num
-done
-$num
-nun=$((nun + 1))
+num=
+until [ "$num" = "1" ]; do
+	read -p "Command > " program
+	$program
 done
